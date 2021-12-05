@@ -71,10 +71,10 @@ namespace Ujjwal_Srivastava_Sprint_I.Controllers
         }
 
         [HttpGet]
-        [Route("user/login/{uname}/{pwd}")]
-        public ActionResult ValidateUser(string uname, string pwd)
+        [Route("user/login/{email}/{pwd}")]
+        public ActionResult ValidateUser(string email, string pwd)
         {
-            var loggedInUser = userList.FirstOrDefault(x=>x.FirstName==uname && x.Password==pwd);
+            var loggedInUser = userList.FirstOrDefault(x=>x.Email==email && x.Password==pwd);
             if (loggedInUser == null)
             {
                 return BadRequest("Invalid username or password");
